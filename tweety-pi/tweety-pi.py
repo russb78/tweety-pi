@@ -35,7 +35,7 @@ tweet_text = ['Another shot taken with tweety-pi!',
 
 ### CAMERA SETTINGS ###
 # Configure the camera, its resolution and give it a second to settle
-camera = PiCamera()
+camera = picamera.PiCamera()
 cam_res = (1024, 768)
 camera.led = False # We don't want to scare the birdies, so turn the LED off!
 pics_taken = 0
@@ -52,12 +52,12 @@ def motion_sense(pir):
 def take_picture(resolution):
 	"""A function to take a number of camera frames using picamera"""
 	global pics_taken
-		camera.resolution = resolution
-		# Capture a sequence of frames
-		camera.capture(os.path.join('pics', 'image_' + str(pics_taken) + '.jpg'))
-		pics_taken += 1
-		print "Picture taken! Tweeting it..."""
-		update_twitter()
+	camera.resolution = resolution
+	# Capture a sequence of frames
+	camera.capture(os.path.join('pics', 'image_' + str(pics_taken) + '.jpg'))
+	pics_taken += 1
+	print "Picture taken! Tweeting it..."""
+	update_twitter()
 
 def update_twitter():
 	"""A function that loads a picture and updates your twitter status"""
@@ -77,7 +77,7 @@ try:
 	# so let's create an infinite loop
 	while True:
 		time.sleep(60)
-		
+
 # The loop is broken if we press CRTL+C
 except KeyboardInterrupt:
 	print "\nQuitting"
