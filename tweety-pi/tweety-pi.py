@@ -17,10 +17,10 @@ GPIO.setup(pir, GPIO.IN)
 ### TWITTER SETTINGS ###
 # Set your access keys as configured via https://apps.twitter.com
 # Keep these details a secret (the speech marks are required) 
-api_key = 'your_api_key_number'
-api_secret = 'your_api_secret_number'
-access_token = 'your_access_token_number'
-token_secret = 'your_token_secret_number'
+api_key = 'api_key'
+api_secret = 'api_secret'
+access_token = 'access_token'
+token_secret = 'token_secret'
 # Initiate the OAuth process
 auth = tweepy.OAuthHandler(api_key, api_secret)
 auth.set_access_token(access_token, token_secret)
